@@ -14,14 +14,12 @@
     <script>
         function temp()
     {
-        var editing = mode is on;
         var name1=document.getElementById("city").value;
         var key=`0ede610a58b539e8b78a6bee9c728a9f`;
         var url=`https://api.openweathermap.org/data/2.5/weather?q=${name1}&appid=${key}`;
         
         fetch(url)
         .then((data)=>data.json())
-        // .then((data=>console.log(data)))
         .then(data=>{
             document.getElementById("cityname").innerHTML=data.name;
             document.getElementById("temperature").innerHTML=data.main.temp;
